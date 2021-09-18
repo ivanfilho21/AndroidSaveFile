@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Testes</string>
+    <string name="download_file">Download File</string>
+    <string name="default_share_text" />
+    <string name="default_share_title">Compartilhar Arquivo</string>
+    <string name="share_file">Share File</string>
+</resources>
