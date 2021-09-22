@@ -14,6 +14,8 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.FileProvider;
 
+import com.example.testes.callback.FileDestinationCallback;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -184,16 +186,60 @@ public class FileUtil {
 
     /**
      * Retorna a extensão a partir do mimeType.
+     * A lista aqui não está completa e talvez nunca esteja.
      * Exemplo: mimeType = "application/pdf" Extensão: ".pdf"
      */
-    @Nullable
+    @NonNull
     public static String getExtensionFromMimeType(@Nullable String mimeType) {
+        String ext = "";
         if (mimeType != null && mimeType.contains("/")) {
-            String[] array = mimeType.split("/");
-            if (array.length > 0) {
-                return "." + array[1];
+            switch (mimeType) {
+                case "image/png":
+                    ext = "png";
+                    break;
+                case "image/jpeg":
+                    ext = "jpeg";
+                    break;
+                case "image/gif":
+                    ext = "gif";
+                    break;
+                case "image/bmp":
+                    ext = "bmp";
+                    break;
+                case "image/svg+xml":
+                    ext = "svg";
+                    break;
+                case "application/pdf":
+                    ext = "pdf";
+                    break;
+                case "text/plain":
+                    ext = "txt";
+                    break;
+                case "text/html":
+                    ext = "html";
+                    break;
+                case "application/msword":
+                    ext = "doc";
+                    break;
+                case "application/vnd.ms-excel":
+                    ext = "xls";
+                    break;
+                case "application/vnd.ms-powerpoint":
+                    ext = "ppt";
+                    break;
+                case "application/vnd.openxmlformats-officedocument.wordprocessingml.document":
+                    ext = "docx";
+                    break;
+                case "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet":
+                    ext = "xlsx";
+                    break;
+                case "application/vnd.openxmlformats-officedocument.presentationml.presentation":
+                    ext = "pptx";
+                    break;
+                default:
+                    ext = "";
             }
         }
-        return mimeType;
+        return "." + ext;
     }
 }

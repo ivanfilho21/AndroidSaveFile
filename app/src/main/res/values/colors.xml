@@ -9,4 +9,5 @@
     <color name="white">#FFFFFFFF</color>
     <color name="blue_primary">#2155F3</color>
     <color name="red_primary">#E91E1E</color>
+    <color name="blue_gray_primary">#4C556C</color>
 </resources>
