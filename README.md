@@ -1,2 +1,2 @@
 # AndroidSaveFile
-A project to share or save a simple PDF file.
+A project to share or save files.
